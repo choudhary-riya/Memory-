@@ -136,24 +136,25 @@ html, body {
     text-align: center;
 }
 
-/* ============ PAGE 2: GAME (4x4 GRID - BIGGER CARDS) ============ */
+/* ============ PAGE 2: GAME (4x4 GRID) ============ */
 .game-screen {
     background: 
         linear-gradient(135deg, #c5dde8 0%, #d8e8f0 50%, #c5dde8 100%);
     align-items: center;
     justify-content: space-between;
-    padding: 55px 8px 8px;
+    padding: 70px 12px 12px;
     min-height: 100vh;
     height: 100vh;
     position: relative;
 }
 
+/* Add decorative floral border using template2 */
 .game-screen::before {
     content: '';
     position: absolute;
     inset: 0;
     background: url('template2.png') center/cover no-repeat;
-    opacity: 0.22;
+    opacity: 0.25;
     z-index: 0;
     pointer-events: none;
 }
@@ -165,20 +166,19 @@ html, body {
 
 .game-info {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.6rem;
     justify-content: center;
     width: 100%;
     flex-wrap: wrap;
-    margin-bottom: 4px;
 }
 
 .info-pill {
     background: rgba(61, 74, 24, 0.92);
     color: white;
-    padding: 0.35rem 0.85rem;
+    padding: 0.4rem 0.95rem;
     border-radius: 30px;
     border: 2px solid var(--cream-yellow);
-    font-size: clamp(0.8rem, 2.8vw, 0.95rem);
+    font-size: clamp(0.85rem, 3vw, 1rem);
     box-shadow: 0 3px 10px rgba(0,0,0,0.2);
     font-weight: 500;
     white-space: nowrap;
@@ -191,26 +191,25 @@ html, body {
     font-weight: 700;
 }
 
-/* The 4x4 grid - LARGER cards with portrait orientation */
+/* The 4x4 grid */
 .game-board {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    gap: clamp(4px, 1vw, 8px);
-    width: min(98vw, calc(82vh * 3 / 4));
-    aspect-ratio: 3 / 4;
+    gap: clamp(5px, 1.5vw, 10px);
+    width: 100%;
+    max-width: min(95vw, 75vh);
+    aspect-ratio: 1 / 1;
     margin: auto 0;
-    padding: 0;
 }
 
 .game-footer {
     text-align: center;
     color: var(--olive);
     font-family: 'Pinyon Script', cursive;
-    font-size: clamp(1rem, 3.5vw, 1.4rem);
-    margin-top: 0.3rem;
+    font-size: clamp(1.1rem, 4vw, 1.6rem);
+    margin-top: 0.5rem;
     text-shadow: 0 2px 4px rgba(255,255,255,0.7);
-    line-height: 1;
 }
 
 .game-footer .amp-small {
@@ -256,7 +255,7 @@ html, body {
     position: absolute;
     inset: 0;
     backface-visibility: hidden;
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -266,20 +265,20 @@ html, body {
 
 .card-back {
     background: linear-gradient(135deg, var(--cream-yellow), var(--cream-light));
-    border: 1.5px solid var(--gold);
+    border: 2px solid var(--gold);
     color: var(--gold-dark);
 }
 
 .card-back::before {
     content: '✦';
-    font-size: clamp(1.5rem, 5vw, 2.2rem);
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
     color: var(--gold-dark);
     font-family: 'Pinyon Script', cursive;
 }
 
 .card-front {
     background: var(--cream-light);
-    border: 1.5px solid var(--gold);
+    border: 2px solid var(--gold);
     transform: rotateY(180deg);
 }
 
@@ -287,7 +286,6 @@ html, body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
 }
 
 /* ============ PAGE 3: INVITE REVEAL ============ */
